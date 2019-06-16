@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>
+      <% if (dispType === "1") { %>
+      <div><%= content %></div>
+      <form method="post" action="/user/confirm">
+        <table>
+          <tr>
+            <th>ユーザID</th>
+            <td><input type="text" name="userId" /></td>
+          </tr>
+          <tr>
+            <th>パスワード</th>
+            <td><input type="text" name="password" /></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="送信" /></td>
+            <td><input type="reset" value="リセット" /></td>
+          </tr>
+        </table>
+      </form>
+      <% } %>
+
+      <% if (dispType === "2") { %>
+      <div><%= content %></div>
+      <form method="post" action="/user/complete">
+        <input type="hidden" name="userId" value="<%= userId %>" />
+        <br>
+        <input type="hidden" name="password" value="<%= password %>" />
+        <br>
+        <input type="submit" value="送信" />
+      </form>
+      <% } %>
+
+      <% if (dispType === "3") { %>
+      <div><%= content %></div>
+      <table>
+        <tr>
+            <td>▼登録情報▼</td>
+        </tr>
+        <tr>
+          <td><%= userId %></td>
+          <td><%= password %></td>
+        </tr>
+      </table>
+      <% } %>
+    </div>
+  </body>
+</html>

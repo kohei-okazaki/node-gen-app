@@ -1,3 +1,18 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>エラー画面</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="icon" type="image/png" href="/images/favicon.ico">
+      </head>
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+    <div>
+      予期せぬエラーが発生しました。
+    </div>
+    <div>
+      システム管理者に連絡してください。
+    </div>
+</html>
+
