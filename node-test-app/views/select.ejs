@@ -7,20 +7,17 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <div>
-      <div><%= content %></div>
-    </div>
     <table>
+      <% for(var i in content) { %>
       <tr>
-        <td>
-          <a href="/user/input">ユーザ画面へ</a>
-        </td>
+        <% var obj = content[i]; %>
+        <td><%= obj.companyCode %></td>
+        <td><%= obj.workStartHour %></td>
+        <td><%= obj.workStartMinute %></td>
+        <td><%= obj.workEndHour %></td>
+        <td><%= obj.workEndMinute %></td>
       </tr>
-      <tr>
-        <td>
-          <a href="/select">select画面へ</a>
-        </td>
-      </tr>
+      <% } %>
     </table>
   </body>
 </html>
