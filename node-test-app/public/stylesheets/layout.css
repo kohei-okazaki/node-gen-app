@@ -1,0 +1,82 @@
+/**************/
+/* layout.css */
+/**************/
+@charset "UTF-8";
+
+.errorMessage {
+  background : #f0f0f0;
+  color : #ff0000;
+  font-size : 15px;
+  padding : 5px 5px 5px 5px;
+  text-align : center;
+}
+
+.contentLayout {
+  margin-top : auto;
+  margin-left : auto;
+  margin-right : auto;
+  margin-bottom : auto;
+  width : 99%;
+  padding : 5px;
+  background : #f0f0f0;
+  box-shadow : 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+.header {
+  margin : 10px;
+  padding : 10px;
+}
+
+.footer {
+  margin : 10px;
+  padding : 10px;
+}
+
+/* ▼テーブルの行の背景を変更▼ */
+table.data {
+  /* セルの線を重ねる */
+  border-collapse : collapse;
+}
+
+tr.data:nth-child(odd) {
+  /* 背景色指定 */
+  background-color : #ddd;
+}
+
+th.data, td.data {
+  /* 余白指定 */
+  padding : 5px 10px;
+}
+/* ▲テーブルの行の背景を変更▲ */
+
+/* ▼divをテーブル構成にする▼ */
+/* <table>の代わり */
+.table {
+  display : table;
+}
+
+/* <tr>の代わり */
+.table-row {
+  margin : 5px 5px 5px 5px;
+  padding : 5px 5px 5px 5px;
+  display : table-row;
+}
+
+/* <th>の代わり */
+.table-header {
+  margin : 5px 5px 5px 5px;
+  padding : 5px 5px 5px 5px;
+  vertical-align : middle;
+  display : table-cell;
+}
+
+/* <td>の代わり */
+.table-data {
+  margin : 5px 5px 5px 5px;
+  padding : 5px 5px 5px 5px;
+  text-align : left;
+  vertical-align : middle;
+  display : table-cell;
+}
+/* ▲divをテーブル構成にする▲ */
+

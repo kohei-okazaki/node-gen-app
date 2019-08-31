@@ -10,35 +10,6 @@ const mysql_setting = {
   database: 'kinwork'
 };
 
-
-// router.get("/", function (request, response, next) {
-
-//   var a = {
-//     companyCode: '0001',
-//     workStartHour: '1-1',
-//     workStartMinute: '1-2',
-//     workEndHour: '1-3',
-//     workEndMinute: '1-4'
-//   };
-
-//   var b = {
-//     companyCode: '0002',
-//     workStartHour: '2-1',
-//     workStartMinute: '2-2',
-//     workEndHour: '2-3',
-//     workEndMinute: '2-4'
-//   };
-
-//   var array = [a, b];
-
-//   var data = {
-//     title: 'mysqlセレクト',
-//     content: array
-//   };
-
-//   response.render('select', data);
-// });
-
 router.get("/", function (request, response, next) {
 
   console.log('--> コネクションの用意');
