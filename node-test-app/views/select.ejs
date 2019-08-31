@@ -8,14 +8,22 @@
   <body>
     <h1><%= title %></h1>
     <table>
+      <tr>
+        <th>企業コード</th>
+        <th>始業時間(時)</th>
+        <th>始業時間(分)</th>
+        <th>終業時間(時)</th>
+        <th>終業時間(分)</th>
+        </th>
+      </tr>
       <% for(var i in content) { %>
       <tr>
         <% var obj = content[i]; %>
-        <td><%= obj.companyCode %></td>
-        <td><%= obj.workStartHour %></td>
-        <td><%= obj.workStartMinute %></td>
-        <td><%= obj.workEndHour %></td>
-        <td><%= obj.workEndMinute %></td>
+        <td><%= obj.COMPANY_CODE %></td>
+        <td><%= obj.WORK_START_HOUR %></td>
+        <td><%= obj.WORK_START_MINUTE %></td>
+        <td><%= obj.WORK_END_HOUR %></td>
+        <td><%= obj.WORK_END_MINUTE %></td>
       </tr>
       <% } %>
     </table>
