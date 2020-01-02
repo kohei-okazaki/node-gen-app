@@ -12,6 +12,8 @@ const mysql_setting = {
 
 router.get("/", function (request, response, next) {
 
+  console.log('定時マスタ検索画面を表示' + request.url);
+
   console.log('--> コネクションの用意');
   // コネクションの用意
   var connection = mysql.createConnection(mysql_setting);

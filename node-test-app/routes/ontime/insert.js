@@ -15,7 +15,8 @@ const mysql_setting = {
  */
 router.get("/", function (request, response, next) {
 
-  console.log('勤怠登録画面を表示' + request.url);
+  console.log('定時マスタ登録画面を表示' + request.url);
+
   var data = {
     title: "新規作成",
     content: "新しいレコードを入力："
