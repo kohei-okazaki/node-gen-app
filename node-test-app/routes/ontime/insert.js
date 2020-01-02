@@ -19,7 +19,7 @@ router.get("/", function (request, response, next) {
 
   var data = {
     title: "定時マスタ新規作成",
-    content: "新しいレコードを入力："
+    hasRecord: false
   }
   response.render('ontime/insert', data);
 });
@@ -33,7 +33,7 @@ router.post("/", function(request, response, next) {
   var workStartMinute = request.body.workStartMinute;
   var workEndHour = request.body.workEndHour;
   var workEndMinute = request.body.workEndMinute;
-  var data = {
+  var entity = {
     "COMPANY_CODE": companyCode,
     "WORK_START_HOUR": workStartHour,
     "WORK_START_MINUTE": workStartMinute,
@@ -53,14 +53,15 @@ router.post("/", function(request, response, next) {
 
   // データを取り出す
   let sql = "insert into ONTIME_MT set ?";
-  connection.query(sql, data, function(error, results, fields) {
+  connection.query(sql, entity, function(error, results, fields) {
 
     // データベースアクセス完了時の処理
     if (error == null) {
       // 正常終了の場合
       var data = {
         title: '定時マスタ登録結果',
-        content: results
+        entity: entity,
+        hasRecord: true
       };
       console.log('--> レンダリング');
       response.render('ontime/insert', data);
