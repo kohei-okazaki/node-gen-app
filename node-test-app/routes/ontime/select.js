@@ -24,19 +24,21 @@ router.get("/", function (request, response, next) {
   connection.connect();
   console.log('<-- データベースに接続');
 
-  var sql = 'SELECT * FROM ONTIME_MT';
+  let sql = 'SELECT * FROM ONTIME_MT';
   // データを取り出す
   connection.query(sql, function(error, results, fields) {
 
     // データベースアクセス完了時の処理
     if (error == null) {
       var data = {
-        title: 'mysqlセレクト',
+        title: '定時マスタ検索結果画面',
         content: results
       };
 
       console.log('--> レンダリング');
-      response.render('/ontime/select', data);
+
+      // 下の"ontime/select"の先頭に/を入れると404で落ちる
+      response.render('ontime/select', data);
       console.log('<-- レンダリング');
     } else {
       console.log(error.stack);

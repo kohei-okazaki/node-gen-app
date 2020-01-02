@@ -18,7 +18,7 @@ router.get("/", function (request, response, next) {
   console.log('定時マスタ登録画面を表示' + request.url);
 
   var data = {
-    title: "新規作成",
+    title: "定時マスタ新規作成",
     content: "新しいレコードを入力："
   }
   response.render('ontime/insert', data);
@@ -52,13 +52,14 @@ router.post("/", function(request, response, next) {
   console.log('<-- データベースに接続');
 
   // データを取り出す
-  connection.query("insert into ONTIME_MT set ?", data, function(error, results, fields) {
+  let sql = "insert into ONTIME_MT set ?";
+  connection.query(sql, data, function(error, results, fields) {
 
     // データベースアクセス完了時の処理
     if (error == null) {
       // 正常終了の場合
       var data = {
-        title: '登録結果',
+        title: '定時マスタ登録結果',
         content: results
       };
       console.log('--> レンダリング');
