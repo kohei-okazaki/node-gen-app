@@ -9,6 +9,20 @@
   <body>
     <div class="contentLayout">
       <h1><%= title %></h1>
+      <p>企業コードを指定しない場合、全件検索します。</p>
+      <form method="post" action="/ontime/select">
+        <table class="data">
+          <tr class="data">
+            <td class="data">企業コード</td>
+            <td class="data"><input type="text" name="companyCode"></td>
+          </tr>
+          <tr class="data">
+            <th class="data"></th>
+            <td class="data"><input type="submit" value="検索する"></td>
+          </tr>
+        </table>
+      </form>
+      <% if (hasRecord) { %>
       <table class="data">
         <tr class="data">
           <th class="data">企業コード</th>
@@ -29,6 +43,8 @@
         </tr>
         <% } %>
       </table>
+      <% } %>
+      <a href="/menu">Menuへ</a>
     </div>
   </body>
 </html>
