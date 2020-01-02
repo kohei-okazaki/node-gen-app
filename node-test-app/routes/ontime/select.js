@@ -34,7 +34,7 @@ router.get("/", function (request, response, next) {
       };
 
       console.log('--> レンダリング');
-      response.render('select', data);
+      response.render('/ontime/select', data);
       console.log('<-- レンダリング');
     } else {
       console.log(error.stack);

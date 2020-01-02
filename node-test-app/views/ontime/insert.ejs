@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/layout.css' />
+</head>
+<body>
+  <div class="contentLayout">
+    <h1><%= title %></h1>
+    <form method="post" action="/ontime/insert">
+      <table class="data">
+        <tr class="data">
+          <th class="data">企業コード</th>
+          <td class="data"><input type="text" name="companyCode"></td>
+        </tr>
+        <tr class="data">
+          <th class="data">始業時間(時)/th>
+           <td class="data"><input type="text" name="workStartHour"></td>
+        </tr>
+        <tr class="data">
+         <th class="data">始業時間(分)</th>
+         <td class="data"><input type="text" name="workStartMinute"></td>
+        </tr>
+        <tr class="data">
+          <th class="data">終業時間(時)/th>
+          <td class="data"><input type="text" name="workEndHour"></td>
+        </tr>
+        <tr class="data">
+          <th class="data">終業時間(分)</th>
+          <td class="data"><input type="text" name="workEndMinute"></td>
+        </tr>
+        <tr class="data">
+          <th class="data"></th>
+          <td class="data"><input type="submit" value="作成する"></td>
+        </tr>
+      </table> 
+    </form>
+  </div>
+</body>
+</html>
