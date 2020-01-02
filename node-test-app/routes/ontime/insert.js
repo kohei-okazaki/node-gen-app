@@ -68,6 +68,7 @@ router.post("/", function(request, response, next) {
       console.log('<-- レンダリング');
     } else {
       console.log(error.stack);
+      response.render('ontime/insert', data);
     }
   });
 
