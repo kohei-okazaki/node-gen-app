@@ -120,17 +120,12 @@ textarea:focus {
 
 h1 {
   position: relative;
-  padding: 0.6em;
-  background: #9853f1;
+  padding: 0.25em 0;
 }
-
 h1:after {
-  position: absolute;
-  content: '';
-  top: 100%;
-  left: 30px;
-  border: 15px solid transparent;
-  border-top: 15px solid #9853f1;
-  width: 0;
-  height: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+  background: linear-gradient(to right, rgb(230, 90, 90), transparent);
 }
