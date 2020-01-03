@@ -9,12 +9,19 @@
   <body>
     <div class="contentLayout">
       <h1><%= title %></h1>
+      <table class="data">
+        <% for (var i in errorMessageArray) { %>
+        <tr>
+          <td class="errorMessage"><%= errorMessageArray[i].msg %></td>
+        </tr>
+        <% } %>
+      </table>
       <p>企業コードを指定しない場合、全件検索します。</p>
       <form method="post" action="/ontime/select">
         <table class="data">
           <tr class="data">
             <td class="data">企業コード</td>
-            <td class="data"><input type="text" name="companyCode"></td>
+            <td class="data"><input type="text" name="companyCode" value="<%= form.companyCode %>"></td>
           </tr>
           <tr class="data">
             <th class="data"></th>

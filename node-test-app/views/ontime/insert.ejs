@@ -10,27 +10,34 @@
 <body>
   <div class="contentLayout">
     <h1><%= title %></h1>
+    <table class="data">
+      <% for (var i in errorMessageArray) { %>
+      <tr>
+        <td class="errorMessage"><%= errorMessageArray[i].msg %></td>
+      </tr>
+      <% } %>
+    </table>
     <form method="post" action="/ontime/insert">
       <table class="data">
         <tr class="data">
           <th class="data">企業コード</th>
-          <td class="data"><input type="text" name="companyCode"></td>
+          <td class="data"><input type="text" name="companyCode" value="<%= form.companyCode %>"></td>
         </tr>
         <tr class="data">
           <th class="data">始業時間(時)</th>
-           <td class="data"><input type="text" name="workStartHour"></td>
+           <td class="data"><input type="text" name="workStartHour" value="<%= form.workStartHour %>"></td>
         </tr>
         <tr class="data">
          <th class="data">始業時間(分)</th>
-         <td class="data"><input type="text" name="workStartMinute"></td>
+         <td class="data"><input type="text" name="workStartMinute" value="<%= form.workStartMinute %>"></td>
         </tr>
         <tr class="data">
           <th class="data">終業時間(時)</th>
-          <td class="data"><input type="text" name="workEndHour"></td>
+          <td class="data"><input type="text" name="workEndHour" value="<%= form.workEndHour %>"></td>
         </tr>
         <tr class="data">
           <th class="data">終業時間(分)</th>
-          <td class="data"><input type="text" name="workEndMinute"></td>
+          <td class="data"><input type="text" name="workEndMinute" value="<%= form.workEndMinute %>"></td>
         </tr>
         <tr class="data">
           <th class="data"></th>
