@@ -25,6 +25,7 @@
       <% if (hasRecord) { %>
       <table class="data">
         <tr class="data">
+          <th class="data"></th>
           <th class="data">企業コード</th>
           <th class="data">始業時間(時)</th>
           <th class="data">始業時間(分)</th>
@@ -35,6 +36,7 @@
         <% for(var i in content) { %>
         <tr>
         <% var obj = content[i]; %>
+        <td class="data"><a href="/ontime/update?companyCode=<%= obj.COMPANY_CODE%>">更新</a></td>
         <td class="data"><%= obj.COMPANY_CODE %></td>
         <td class="data"><%= obj.WORK_START_HOUR %></td>
         <td class="data"><%= obj.WORK_START_MINUTE %></td>

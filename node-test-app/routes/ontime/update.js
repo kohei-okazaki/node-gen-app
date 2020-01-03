@@ -18,8 +18,11 @@ router.get("/", function (request, response, next) {
   console.log('定時マスタ更新画面を表示' + request.url);
 
   let companyCode = request.query.companyCode;
+  console.log("企業コード(request.query.companyCode)=" + request.query.companyCode);
+  console.log("企業コード(request.body.companyCode)=" + request.body.companyCode);
   let sql = "SELECT * FROM ONTIME_MT";
-  if (companyCode != null && companyCode != "") {
+  if (companyCode !== null && companyCode !== "") {
+    console.log("企業コードの指定あり")
     sql +=  " WHERE COMPANY_CODE = ?";
   }
   let connection = mysql.createConnection(mysql_setting);
