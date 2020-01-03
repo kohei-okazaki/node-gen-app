@@ -205,7 +205,9 @@ router.post("/insert", [
         }
       });
     });
+
   } else {
+
     console.log(errors.array());
     let data = {
       title: '定時マスタ登録(BookShelf利用)',

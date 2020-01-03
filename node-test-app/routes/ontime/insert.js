@@ -99,11 +99,11 @@ router.post("/", [
 
     // Entityを作成
     let entity = {
-      "COMPANY_CODE": companyCode,
-      "WORK_START_HOUR": workStartHour,
-      "WORK_START_MINUTE": workStartMinute,
-      "WORK_END_HOUR": workEndHour,
-      "WORK_END_MINUTE": workEndMinute,
+      COMPANY_CODE: companyCode,
+      WORK_START_HOUR: workStartHour,
+      WORK_START_MINUTE: workStartMinute,
+      WORK_END_HOUR: workEndHour,
+      WORK_END_MINUTE: workEndMinute
     };
 
     let connection = mysql.createConnection(mysql_setting);
