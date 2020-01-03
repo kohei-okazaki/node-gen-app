@@ -117,3 +117,20 @@ textarea:focus {
   box-shadow: 0 0 7px rgba(48, 4, 245, 0.664);
   border: solid 2px rgba(48, 4, 245, 0.664);
 }
+
+h1 {
+  position: relative;
+  padding: 0.6em;
+  background: #9853f1;
+}
+
+h1:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #9853f1;
+  width: 0;
+  height: 0;
+}
