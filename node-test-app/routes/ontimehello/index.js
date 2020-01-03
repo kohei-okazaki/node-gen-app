@@ -1,5 +1,4 @@
 var express = require("express");
-var mysql = require("mysql");
 var router = express.Router();
 const { check, validationResult } = require('express-validator');
 
@@ -54,17 +53,16 @@ router.post("/select", [
 
   console.log('定時マスタ検索画面を表示' + request.url);
 
-  let companyCode = request.body["companyCode"];
   let form = {
-    companyCode: companyCode
+    companyCode: request.body.companyCode
   };
 
   // バリデーションの結果にエラーがあるかのチェック
   const errors = validationResult(request);
 
-  if (errors.isEmpty() || (companyCode === "")) {
+  if (errors.isEmpty() || (form.companyCode === "")) {
     // 妥当性チェックエラーでない場合
-    if (companyCode === "") {
+    if (form.companyCode === "") {
       // 企業コードが未指定の場合、全件検索
       new ontimeMt().fetchAll().then((connection) => {
         let data = {
@@ -160,13 +158,14 @@ router.post("/insert", [
     }).withMessage("終業時間(分)は2桁です")
 
 ], function(request, response, next) {
-  let res = response;
-  let entity = {
-    "COMPANY_CODE": request.body.companyCode,
-    "WORK_START_HOUR": request.body.workStartHour,
-    "WORK_START_MINUTE": request.body.workStartMinute,
-    "WORK_END_HOUR": request.body.workEndHour,
-    "WORK_END_MINUTE": request.body.workEndMinute,
+
+  // 入力値をFormに設定
+  let form = {
+    companyCode: request.body.companyCode,
+    workStartHour: request.body.workStartHour,
+    workStartMinute: request.body.workStartMinute,
+    workEndHour: request.body.workEndHour,
+    workEndMinute: request.body.workEndMinute
   };
 
   // DB登録
