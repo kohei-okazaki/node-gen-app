@@ -28,6 +28,7 @@ router.get("/", function (request, response, next) {
  * 新規レコード作成処理
  */
 router.post("/", function(request, response, next) {
+
   var companyCode = request.body.companyCode;
   var workStartHour = request.body.workStartHour;
   var workStartMinute = request.body.workStartMinute;
@@ -41,15 +42,9 @@ router.post("/", function(request, response, next) {
     "WORK_END_MINUTE": workEndMinute,
   };
 
-  console.log('--> コネクションの用意');
-  // DBの設定情報
-  var connection = mysql.createConnection(mysql_setting);
-  console.log('<-- コネクションの用意');
 
-  console.log('--> データベースに接続');
-  // DB接続
+  var connection = mysql.createConnection(mysql_setting);
   connection.connect();
-  console.log('<-- データベースに接続');
 
   // データを取り出す
   let sql = "insert into ONTIME_MT set ?";
@@ -72,9 +67,7 @@ router.post("/", function(request, response, next) {
     }
   });
 
-  // 接続を解除
   connection.end();
-
 });
 
 module.exports = router;

@@ -58,15 +58,12 @@ router.post("/", function (request, response, next) {
       // ※※※ 下の"ontime/select"の先頭に/を入れると404で落ちる  ※※※
       // ※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
       response.render('ontime/select', data);
-      console.log('<-- レンダリング');
     } else {
       console.log(error.stack);
     }
   });
 
-  console.log('--> DB切断');
   connection.end();
-  console.log('<-- DB切断');
 });
 
 module.exports = router;
