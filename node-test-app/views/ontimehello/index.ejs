@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/layout.css' />
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
+</head>
+<body>
+<div class="contentLayout">
+  <h1><%= title %></h1>
+
+  <table class="data">
+    <tr class="data">
+      <th class="data">企業コード</th>
+      <th class="data">始業時間(時)</th>
+      <th class="data">始業時間(分)</th>
+      <th class="data">終業時間(時)</th>
+      <th class="data">終業時間(分)</th>
+    </tr>
+    <% for (var i in content) { %>
+      <tr class="data">
+        <% var obj = content[i].attributes; %>
+        <td class="data"><%= obj.companyCode %></td>
+        <td class="data"><%= obj.workStartdour %></td>
+        <td class="data"><%= obj.workStartMinute %></td>
+        <td class="data"><%= obj.workEndHour %></td>
+        <td class="data"><%= obj.workEndMinute %></td>
+      </tr>
+    <% } %>
+  </table>
+
+  <a href="/menu">Menuへ</a>
+</div>
+</body>
+</html>

@@ -10,6 +10,7 @@ var menuRouter = require('./routes/menu');
 var ontimeSelectRouter = require('./routes/ontime/select');
 var ontimeInsertRouter = require('./routes/ontime/insert');
 var ontimeUpdateRouter = require('./routes/ontime/update');
+var ontimeHelloRouter = require('./routes/ontimehello');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/menu', menuRouter);
 app.use('/ontime/select', ontimeSelectRouter);
 app.use('/ontime/insert', ontimeInsertRouter);
 app.use('/ontime/update', ontimeUpdateRouter);
+app.use('/ontimehello', ontimeHelloRouter);
 
 // catch 404 and forward to error handler
 app.use(function(request, response, next) {
