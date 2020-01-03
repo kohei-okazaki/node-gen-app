@@ -13,6 +13,7 @@
 
   <table class="data">
     <tr class="data">
+      <th class="data"></th>
       <th class="data">企業コード</th>
       <th class="data">始業時間(時)</th>
       <th class="data">始業時間(分)</th>
@@ -22,11 +23,12 @@
     <% for (var i in content) { %>
       <tr class="data">
         <% var obj = content[i].attributes; %>
-        <td class="data"><%= obj.companyCode %></td>
-        <td class="data"><%= obj.workStartdour %></td>
-        <td class="data"><%= obj.workStartMinute %></td>
-        <td class="data"><%= obj.workEndHour %></td>
-        <td class="data"><%= obj.workEndMinute %></td>
+        <td class="data"><a href="/ontime/update?companyCode=<%= obj.COMPANY_CODE %>">更新</a></td>
+        <td class="data"><%= obj.COMPANY_CODE %></td>
+        <td class="data"><%= obj.WORK_START_HOUR %></td>
+        <td class="data"><%= obj.WORK_START_MINUTE %></td>
+        <td class="data"><%= obj.WORK_END_HOUR %></td>
+        <td class="data"><%= obj.WORK_END_MINUTE %></td>
       </tr>
     <% } %>
   </table>

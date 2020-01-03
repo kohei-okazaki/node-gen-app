@@ -129,6 +129,7 @@ router.post("/", [
         response.render('ontime/insert', data);
       }
     });
+    connection.end();
 
   } else {
     // 妥当性チェックエラーの場合
@@ -144,7 +145,6 @@ router.post("/", [
 
   }
 
-  connection.end();
 });
 
 module.exports = router;
