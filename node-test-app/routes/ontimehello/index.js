@@ -187,7 +187,8 @@ router.post("/insert", [
     // DB登録後に以下のエラーが出る
     // {"error":true,"data":{"message":"select `ONTIME_MT`.* from `ONTIME_MT` where `ONTIME_MT`.`id` = 0 limit 1 - 
     // ER_BAD_FIELD_ERROR: Unknown column 'ONTIME_MT.id' in 'where clause'"}}
-    new ontimeMt(entity).save().then(function(model) {
+    // new ontimeMt(entity).save().then(function(model) {
+    new ontimeMt(entity).save().then((model) => {
       let data = {
         title: "定時マスタ登録(BookShelf利用)",
         entity: entity,
