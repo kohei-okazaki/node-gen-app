@@ -3,19 +3,35 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/layout.css' />
     <link rel="icon" type="image/png" href="/images/favicon.ico">
   </head>
   <body>
+    <div class="contentLayout">
     <h1><%= title %></h1>
     <div>
       <div><%= content %></div>
     </div>
-    <table>
-      <tr>
-        <td>
-          <a href="/user/input">ユーザ画面へ</a>
-        </td>
-      </tr>
-    </table>
+      <table>
+        <tr>
+          <td><a href="/user/input">ユーザ画面へ</a></td>
+        </tr>
+        <tr>
+          <td><a href="/ontime/select">定時マスタ検索画面へ</a></td>
+        </tr>
+        <tr>
+          <td><a href="/ontime/insert">定時マスタ登録画面へ</a></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="/ontimehello/select">定時マスタ検索(BookShelf利用)</a></td>
+        </tr>
+        <tr>
+          <td><a href="/ontimehello/insert">定時マスタ登録(BookShelf利用)</a></td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>

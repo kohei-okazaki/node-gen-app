@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/layout.css' />
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
+  </head>
+  <body>
+    <div class="contentLayout">
+      <h1><%= title %></h1>
+      <table class="data">
+        <% for (var i in errorMessageArray) { %>
+        <tr>
+          <td class="errorMessage"><%= errorMessageArray[i].msg %></td>
+        </tr>
+        <% } %>
+      </table>
+      <p>企業コードを指定しない場合、全件検索します。</p>
+      <form method="post" action="/ontime/select">
+        <table class="data">
+          <tr class="data">
+            <td class="data">企業コード</td>
+            <td class="data"><input type="text" name="companyCode" value="<%= form.companyCode %>"></td>
+          </tr>
+          <tr class="data">
+            <th class="data"></th>
+            <td class="data"><input type="submit" value="検索する"></td>
+          </tr>
+        </table>
+      </form>
+      <br>
+      <% if (hasRecord) { %>
+      <table class="data">
+        <tr class="data">
+          <th class="data"></th>
+          <th class="data">企業コード</th>
+          <th class="data">始業時間(時)</th>
+          <th class="data">始業時間(分)</th>
+          <th class="data">終業時間(時)</th>
+          <th class="data">終業時間(分)</th>
+          </th>
+        </tr>
+        <% for(var i in content) { %>
+        <tr>
+        <% var obj = content[i]; %>
+        <td class="data"><a href="/ontime/update?companyCode=<%= obj.COMPANY_CODE %>">更新</a></td>
+        <td class="data"><%= obj.COMPANY_CODE %></td>
+        <td class="data"><%= obj.WORK_START_HOUR %></td>
+        <td class="data"><%= obj.WORK_START_MINUTE %></td>
+        <td class="data"><%= obj.WORK_END_HOUR %></td>
+        <td class="data"><%= obj.WORK_END_MINUTE %></td>
+        </tr>
+        <% } %>
+      </table>
+      <% } %>
+      <a href="/menu">Menuへ</a>
+    </div>
+  </body>
+</html>

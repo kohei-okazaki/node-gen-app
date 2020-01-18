@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/layout.css' />
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
+</head>
+<body>
+  <div class="contentLayout">
+    <h1><%= title %></h1>
+    <form method="post" action="/ontime/update">
+      <input type="hidden" name="companyCode" value="<%= entity.COMPANY_CODE%>">
+      <table class="data">
+        <tr class="data">
+          <th class="data">始業時間(時)</th>
+          <td class="data"><input type="text" name="workStartHour" value="<%= entity.WORK_START_HOUR%>"></td>
+        </tr>
+        <tr class="data">
+         <th class="data">始業時間(分)</th>
+         <td class="data"><input type="text" name="workStartMinute" value="<%= entity.WORK_START_MINUTE%>"></td>
+        </tr>
+        <tr class="data">
+          <th class="data">終業時間(時)</th>
+          <td class="data"><input type="text" name="workEndHour" value="<%= entity.WORK_END_HOUR%>"></td>
+        </tr>
+        <tr class="data">
+          <th class="data">終業時間(分)</th>
+          <td class="data"><input type="text" name="workEndMinute" value="<%= entity.WORK_END_MINUTE%>"></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td><input type="submit" value="更新する"></td>
+        </tr>
+      </table> 
+    </form>
+    <a href="/menu">Menuへ</a>
+  </div>
+</body>
+</html>
